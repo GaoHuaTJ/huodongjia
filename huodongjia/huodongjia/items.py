@@ -11,9 +11,9 @@ import scrapy
 class HuodongjiaItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    meeting=scrapy.Field()
-    date=scrapy.Field()
-    place=scrapy.Field()
-    industry=scrapy.Field()
+    meeting=scrapy.Field()#会议名字段
+    date=scrapy.Field()#日期字段
+    place=scrapy.Field()#地点字段
+    industry=scrapy.Field()#行业字段
     pass
 

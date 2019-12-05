@@ -11,7 +11,7 @@
 
 BOT_NAME = 'huodongjia'
 
-SPIDER_MODULES = ['huodongjia.spiders']
+SPIDER_MODULES = ['huodongjia.spiders']#scrapy即将导入的库的列表
 NEWSPIDER_MODULE = 'huodongjia.spiders'
 
 
@@ -43,7 +43,7 @@ DEFAULT_REQUEST_HEADERS = {
   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
   'Accept-Language': 'zh-CN,zh;q=0.9',
   'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
-}
+}#模拟浏览器
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
@@ -66,7 +66,7 @@ DEFAULT_REQUEST_HEADERS = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'huodongjia.pipelines.HuodongjiaPipeline': 300,
+   'huodongjia.pipelines.HuodongjiaPipeline': 300,#数字的大小代表的是存在多个通道时，先后被执行的顺序
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

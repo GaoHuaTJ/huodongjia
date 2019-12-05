@@ -2,11 +2,11 @@ import scrapy
 
 from huodongjia.items import HuodongjiaItem
 class HuodongjiaSpuder(scrapy.Spider):
-    name = "huodongjia"
-    start_urls=["https://www.huodongjia.com/business/17/overview/page-1"]
-    base_url="https://www.huodongjia.com/business/17/overview/"
-    offset=0
-    def parse(self, response):
+    name = "huodongjia"#name of spider
+    start_urls=["https://www.huodongjia.com/business/17/overview/page-1"]#innitial url
+    base_url="https://www.huodongjia.com/business/17/overview/"# basic url
+    offset=0 #偏移量
+    def parse(self,response):
         item=HuodongjiaItem()
         item["meeting"]=response.xpath("//*[@id=\"event-infos-table\"]/tbody/tr/td[1]/a/text()").extract()
         item["date"]=response.xpath("//*[@id=\"event-infos-table\"]/tbody/tr/@time").extract()
