@@ -16,7 +16,7 @@ class HuodongjiaPipeline(object):
 
     def process_item(self, item, spider):
 
-        ## 删除每一次爬取的表头
+        # 删除每一次爬取的表头
         item['date'] = item['date'][:]
         item['place'] = item['place'][1:]
         item['industry'] = item['industry'][1:]
@@ -31,7 +31,7 @@ class HuodongjiaPipeline(object):
         if len(df_temp) == 0:
             spider.crawler.engine.close_spider(spider)
 
-        ## 将日期类型转为字符串，否则excel打开之后会自动变为yyyy-mm-dd hh-mm-ss
+        # 将日期类型转为字符串，否则excel打开之后会自动变为yyyy-mm-dd hh-mm-ss
         self.df["日期"] = self.df["日期"].apply(lambda x: x.strftime('%Y-%m-%d'))
         self.df.to_excel(
             f"{str(self.get_next_week()[0])}~{str(self.get_next_week()[1])}_huodongjia.xlsx",
